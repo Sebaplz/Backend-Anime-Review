@@ -1,4 +1,4 @@
-package com.anime.review.config;
+package com.anime.review.security;
 
 import com.anime.review.entity.User;
 import io.jsonwebtoken.Claims;
