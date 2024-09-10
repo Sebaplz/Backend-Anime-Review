@@ -1,4 +1,4 @@
-package com.anime.review.dto;
+package com.anime.review.dto.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

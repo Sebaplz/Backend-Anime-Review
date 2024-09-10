@@ -1,4 +1,4 @@
-package com.anime.review.config;
+package com.anime.review.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -36,7 +36,9 @@ public class SecurityConfig {
 
     private RequestMatcher publicEndPoints(){
         return new OrRequestMatcher(
-                new AntPathRequestMatcher("/api/v1/auth/**")
+                new AntPathRequestMatcher("/api/v1/auth/**"),
+                new AntPathRequestMatcher("/api/v1/genres/**"),
+                new AntPathRequestMatcher("/api/v1/animes/**")
         );
     }
 }

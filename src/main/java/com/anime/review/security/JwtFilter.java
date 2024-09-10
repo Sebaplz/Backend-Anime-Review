@@ -1,4 +1,4 @@
-package com.anime.review.config;
+package com.anime.review.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

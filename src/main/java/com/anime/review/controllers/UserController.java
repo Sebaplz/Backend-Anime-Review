@@ -1,11 +1,10 @@
 package com.anime.review.controllers;
 
-
-import com.anime.review.dto.AuthResponse;
-import com.anime.review.dto.AuthenticationRequest;
-import com.anime.review.dto.RegisterRequest;
-import com.anime.review.exceptions.EmailAlreadyExistsException;
-import com.anime.review.exceptions.EmailNotFoundException;
+import com.anime.review.dto.auth.AuthResponse;
+import com.anime.review.dto.auth.AuthenticationRequest;
+import com.anime.review.dto.auth.RegisterRequest;
+import com.anime.review.exceptions.auth.EmailAlreadyExistsException;
+import com.anime.review.exceptions.auth.EmailNotFoundException;
 import com.anime.review.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

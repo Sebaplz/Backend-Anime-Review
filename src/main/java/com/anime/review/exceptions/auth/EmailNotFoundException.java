@@ -1,4 +1,4 @@
-package com.anime.review.exceptions;
+package com.anime.review.exceptions.auth;
 
 public class EmailNotFoundException extends RuntimeException{
 

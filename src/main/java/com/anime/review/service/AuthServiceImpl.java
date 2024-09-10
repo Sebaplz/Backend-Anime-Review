@@ -1,14 +1,14 @@
 package com.anime.review.service;
 
-import com.anime.review.config.JwtService;
-import com.anime.review.dto.AuthResponse;
-import com.anime.review.dto.AuthenticationRequest;
-import com.anime.review.dto.RegisterRequest;
+import com.anime.review.dto.auth.AuthResponse;
+import com.anime.review.dto.auth.AuthenticationRequest;
+import com.anime.review.dto.auth.RegisterRequest;
 import com.anime.review.entity.Role;
 import com.anime.review.entity.User;
-import com.anime.review.exceptions.EmailAlreadyExistsException;
-import com.anime.review.exceptions.EmailNotFoundException;
+import com.anime.review.exceptions.auth.EmailAlreadyExistsException;
+import com.anime.review.exceptions.auth.EmailNotFoundException;
 import com.anime.review.repository.UserRepository;
+import com.anime.review.security.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -25,7 +25,6 @@ public class AuthServiceImpl implements AuthService{
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
-
 
     @Override
     public AuthResponse register(RegisterRequest request) {
