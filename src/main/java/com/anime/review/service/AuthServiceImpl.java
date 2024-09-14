@@ -61,4 +61,13 @@ public class AuthServiceImpl implements AuthService{
             throw new EmailNotFoundException("El email no está registrado!");
         }
     }
+
+    @Override
+    public void updateImage(String email, String urlImage) {
+        userRepository.findUserByEmail(email)
+                .ifPresent(user -> {
+                    user.setUrlImage(urlImage);
+                    userRepository.save(user);
+                });
+    }
 }

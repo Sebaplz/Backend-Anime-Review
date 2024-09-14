@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.URL;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,17 +26,23 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(unique = true)
     @NotBlank(message = "Username cannot be empty!")
     @Size(min = 1, max = 32, message = "The Username must contain at least 1 character.")
     private String username;
+
     @Column(unique = true)
     @NotBlank(message = "Email cannot be empty!")
     @Email(message = "The email is not valid!")
     private String email;
-    @NotBlank(message = "Please enter a password.")
 
+    @URL(message = "La URL de la imagen no es válida")
+    private String urlImage;
+
+    @NotBlank(message = "Please enter a password.")
     private String password;
+
     @Enumerated(EnumType.ORDINAL)
     private Role role;
 

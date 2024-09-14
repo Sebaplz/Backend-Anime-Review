@@ -37,6 +37,7 @@ public class SecurityConfig {
     private RequestMatcher publicEndPoints(){
         return new OrRequestMatcher(
                 new AntPathRequestMatcher("/api/v1/auth/**"),
+                new AntPathRequestMatcher("/api/v1/users/**"),
                 new AntPathRequestMatcher("/api/v1/genres/**"),
                 new AntPathRequestMatcher("/api/v1/animes/**")
         );
